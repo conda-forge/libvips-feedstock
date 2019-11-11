@@ -20,6 +20,8 @@ docker_image:
 - condaforge/linux-anvil-comp7
 expat:
 - '2.2'
+fftw:
+- '3'
 fontconfig:
 - '2.13'
 freetype:
@@ -43,7 +45,7 @@ librsvg:
 libtiff:
 - 4.0.10
 libwebp:
-- 1.0.0
+- '1.0'
 pango:
 - '1.42'
 pin_run_as_build:
@@ -53,6 +55,8 @@ pin_run_as_build:
     max_pin: x.x
   expat:
     max_pin: x.x
+  fftw:
+    max_pin: x
   fontconfig:
     max_pin: x
   freetype:
