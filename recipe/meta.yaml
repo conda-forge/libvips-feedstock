@@ -14,8 +14,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/libvips/libvips/releases/download/v{{ version }}/vips-{{ version }}a.tar.gz
-  sha256: 3fe3c323c942172d454983b53606afff62bb472d9038eceb4b583f5dfd04b812 
+  url: https://github.com/libvips/libvips/releases/download/v{{ version }}/vips-{{ version }}.tar.gz
+  sha256: c5e4dd5a5c6a777c129037d19ca606769b3f1d405fcc9c8eeda906a61491f790 
 
 build:
   number: 0
