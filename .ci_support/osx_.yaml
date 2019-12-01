@@ -5,7 +5,7 @@ bzip2:
 c_compiler:
 - clang
 c_compiler_version:
-- '4'
+- '9'
 cairo:
 - '1.16'
 cfitsio:
@@ -17,9 +17,11 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '4'
+- '9'
 expat:
 - '2.2'
+fftw:
+- '3'
 fontconfig:
 - '2.13'
 freetype:
@@ -43,7 +45,7 @@ librsvg:
 libtiff:
 - 4.0.10
 libwebp:
-- 1.0.0
+- '1.0'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
@@ -57,6 +59,8 @@ pin_run_as_build:
     max_pin: x.x
   expat:
     max_pin: x.x
+  fftw:
+    max_pin: x
   fontconfig:
     max_pin: x
   freetype:
