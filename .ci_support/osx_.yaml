@@ -29,7 +29,7 @@ freetype:
 gdk_pixbuf:
 - 2.36.12
 giflib:
-- 5.1.7
+- '5.2'
 glib:
 - '2.58'
 hdf5:
@@ -86,6 +86,6 @@ pin_run_as_build:
   zlib:
     max_pin: x.x
 poppler:
-- 0.67.0
+- '0.87'
 zlib:
 - '1.2'
