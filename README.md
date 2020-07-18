@@ -5,7 +5,7 @@ Home: https://libvips.github.io/libvips
 
 Package license: LGPL-2.1
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A fast image processing library with low memory needs
 

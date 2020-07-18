@@ -5,7 +5,7 @@ bzip2:
 c_compiler:
 - clang
 c_compiler_version:
-- '9'
+- '10'
 cairo:
 - '1.16'
 cfitsio:
@@ -17,7 +17,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '9'
+- '10'
 expat:
 - '2.2'
 fftw:
@@ -29,7 +29,7 @@ freetype:
 gdk_pixbuf:
 - 2.36.12
 giflib:
-- 5.1.7
+- '5.2'
 glib:
 - '2.58'
 hdf5:
@@ -45,7 +45,7 @@ librsvg:
 libtiff:
 - 4.1.0
 libwebp:
-- '1.0'
+- '1.1'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
@@ -77,8 +77,6 @@ pin_run_as_build:
     max_pin: x
   libtiff:
     max_pin: x
-  libwebp:
-    max_pin: x.x
   pango:
     max_pin: x.x
   poppler:
@@ -86,6 +84,6 @@ pin_run_as_build:
   zlib:
     max_pin: x.x
 poppler:
-- 0.67.0
+- '0.89'
 zlib:
 - '1.2'
