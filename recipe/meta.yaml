@@ -1,13 +1,12 @@
 # Notes
-# 
 # - `niftiio`, `openexr` and `libheif` are missing
-# 
+#
 # - `imagemagick` is built with `jpeg`, not `libjpeg-turbo`, so we must use
 #   `jpeg` too. This is very unfortunate. It would be good if IM could move
 #   to turbo as well.
 
 {% set name = "libvips" %}
-{% set version = "8.10.0" %}
+{% set version = "8.10.2" %}
 
 package:
   name: {{ name|lower }}
@@ -15,7 +14,7 @@ package:
 
 source:
   url: https://github.com/libvips/libvips/releases/download/v{{ version }}/vips-{{ version }}.tar.gz
-  sha256: 1299d3a98213ae477f0180817ec79afd36803a5b8434f48068e75a721d23b6f9
+  sha256: c1d0d9cb54d75cd4f66dce787fbcac99f834f6621fbf47bce9e02ef65b4ab02a
 
 build:
   number: 0
@@ -31,9 +30,9 @@ requirements:
     - make
     - pkg-config        # [not win]
   host:
-    - bzip2 
-    - cairo 
-    - cfitsio 
+    - bzip2
+    - cairo
+    - cfitsio
     - expat
     - fftw
     - fontconfig
@@ -41,16 +40,16 @@ requirements:
     - gdk-pixbuf
     - giflib
     - glib
-    - gstreamer-orc <0.4.30
+    - gstreamer-orc
     - hdf5
-    - imagemagick <7.0.9
+    - imagemagick
     - jpeg
     - lcms2
     - libexif
     - libgsf
     - libmatio
     - libpng
-    - librsvg 
+    - librsvg
     - libtiff
     - libwebp
     - openslide
@@ -58,16 +57,10 @@ requirements:
     - poppler
     - zlib
   run:
-    - fftw
-    - gdk-pixbuf
-    - gstreamer-orc <0.4.30
+    - gstreamer-orc
     - libexif
-    - libgsf
     - libmatio
-    - librsvg 
-    - libwebp
-    - libxml2
-    - imagemagick <7.0.9
+    - imagemagick
     - openslide
     - pango
     - poppler
