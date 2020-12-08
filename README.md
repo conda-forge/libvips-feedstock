@@ -5,9 +5,13 @@ Home: https://libvips.github.io/libvips
 
 Package license: LGPL-2.1
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libvips-feedstock/blob/master/LICENSE.txt)
 
 Summary: A fast image processing library with low memory needs
+
+Development: https://github.com/libvips/libvips
+
+Documentation: https://libvips.github.io/libvips/API/current
 
 libvips is a demand-driven, horizontally threaded image processing
 library. Compared to similar libraries, libvips runs quickly and uses
@@ -152,6 +156,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@hmaarrfk](https://github.com/hmaarrfk/)
 * [@jcupitt](https://github.com/jcupitt/)
 * [@sebastian-luna-valero](https://github.com/sebastian-luna-valero/)
 
