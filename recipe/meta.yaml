@@ -7,7 +7,7 @@
 #   to turbo as well.
 
 {% set name = "libvips" %}
-{% set version = "8.10.0" %}
+{% set version = "8.10.3" %}
 
 package:
   name: {{ name|lower }}
@@ -15,7 +15,7 @@ package:
 
 source:
   url: https://github.com/libvips/libvips/releases/download/v{{ version }}/vips-{{ version }}.tar.gz
-  sha256: 1299d3a98213ae477f0180817ec79afd36803a5b8434f48068e75a721d23b6f9
+  sha256: c2927dda46862420af7ecf759789e432f530d6d35f6e587ceb82e12de42269c3
 
 build:
   number: 0
@@ -31,9 +31,9 @@ requirements:
     - make
     - pkg-config        # [not win]
   host:
-    - bzip2 
-    - cairo 
-    - cfitsio 
+    - bzip2
+    - cairo
+    - cfitsio
     - expat
     - fftw
     - fontconfig
@@ -50,7 +50,7 @@ requirements:
     - libgsf
     - libmatio
     - libpng
-    - librsvg 
+    - librsvg
     - libtiff
     - libwebp
     - openslide
@@ -64,7 +64,7 @@ requirements:
     - libexif
     - libgsf
     - libmatio
-    - librsvg 
+    - librsvg
     - libwebp
     - libxml2
     - imagemagick <7.0.9
@@ -81,7 +81,7 @@ about:
   license: LGPL-2.1
   license_family: LGPL
   license_file: COPYING
-  summary: 'A fast image processing library with low memory needs'
+  summary: A fast image processing library with low memory needs
   description: |
     libvips is a demand-driven, horizontally threaded image processing
     library. Compared to similar libraries, libvips runs quickly and uses
