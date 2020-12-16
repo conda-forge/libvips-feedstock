@@ -3,7 +3,7 @@ About libvips
 
 Home: https://libvips.github.io/libvips
 
-Package license: LGPL-2.1
+Package license: LGPL-2.1-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libvips-feedstock/blob/master/LICENSE.txt)
 
