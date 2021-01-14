@@ -33,7 +33,7 @@ gdk_pixbuf:
 giflib:
 - '5.2'
 glib:
-- 2.64.6
+- '2.66'
 hdf5:
 - 1.10.6
 jpeg:
@@ -86,5 +86,7 @@ target_platform:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
+- - cdt_name
+  - docker_image
 zlib:
 - '1.2'
