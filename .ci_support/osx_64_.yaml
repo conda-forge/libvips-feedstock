@@ -31,7 +31,7 @@ gdk_pixbuf:
 giflib:
 - '5.2'
 glib:
-- '2.66'
+- '2'
 hdf5:
 - 1.10.6
 jpeg:
@@ -43,7 +43,7 @@ libpng:
 librsvg:
 - '2'
 libtiff:
-- 4.1.0
+- '4'
 libwebp:
 - '1.1'
 macos_machine:
@@ -80,7 +80,7 @@ pin_run_as_build:
   zlib:
     max_pin: x.x
 poppler:
-- '0.89'
+- '21.03'
 target_platform:
 - osx-64
 zip_keys:
