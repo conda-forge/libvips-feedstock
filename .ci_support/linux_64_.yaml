@@ -39,7 +39,7 @@ hdf5:
 jpeg:
 - '9'
 libmatio:
-- '1.5'
+- 1.5.21
 libpng:
 - '1.6'
 librsvg:
