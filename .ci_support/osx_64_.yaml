@@ -19,7 +19,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '11'
 expat:
-- '2.2'
+- '2.3'
 fftw:
 - '3'
 fontconfig:
@@ -65,8 +65,6 @@ pin_run_as_build:
     max_pin: x
   jpeg:
     max_pin: x
-  libmatio:
-    max_pin: x.x
   libpng:
     max_pin: x.x
   librsvg:
