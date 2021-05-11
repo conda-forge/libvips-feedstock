@@ -19,7 +19,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '11'
 expat:
-- '2.2'
+- '2'
 fftw:
 - '3'
 fontconfig:
@@ -45,17 +45,15 @@ librsvg:
 libtiff:
 - '4'
 libwebp:
-- '1.1'
+- '1'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 pango:
-- '1.42'
+- '1.48'
 pin_run_as_build:
   bzip2:
     max_pin: x
   cairo:
-    max_pin: x.x
-  expat:
     max_pin: x.x
   fftw:
     max_pin: x
@@ -65,8 +63,6 @@ pin_run_as_build:
     max_pin: x
   jpeg:
     max_pin: x
-  libmatio:
-    max_pin: x.x
   libpng:
     max_pin: x.x
   librsvg:
