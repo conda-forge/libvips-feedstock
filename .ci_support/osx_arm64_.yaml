@@ -9,7 +9,7 @@ c_compiler_version:
 cairo:
 - '1.16'
 cfitsio:
-- '3.470'
+- 4.0.0
 channel_sources:
 - conda-forge
 channel_targets:
