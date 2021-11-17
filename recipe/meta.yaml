@@ -17,7 +17,7 @@ source:
   sha256: 5043f38828a0ff9f2275f9252f69e14f701ef11f55786cda8aa6ce2c4fbed2f7
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
   run_exports:
     # SO name changes at minor rev bumps.
