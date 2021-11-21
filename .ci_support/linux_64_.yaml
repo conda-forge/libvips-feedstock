@@ -35,7 +35,7 @@ giflib:
 glib:
 - '2'
 hdf5:
-- 1.10.6
+- 1.12.1
 jpeg:
 - '9'
 libmatio:
