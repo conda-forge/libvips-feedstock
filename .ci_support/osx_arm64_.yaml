@@ -5,7 +5,7 @@ bzip2:
 c_compiler:
 - clang
 c_compiler_version:
-- '11'
+- '12'
 cairo:
 - '1.16'
 cfitsio:
@@ -17,7 +17,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '11'
+- '12'
 expat:
 - '2'
 fftw:
@@ -49,7 +49,7 @@ libwebp:
 macos_machine:
 - arm64-apple-darwin20.0.0
 pango:
-- '1.48'
+- '1.50'
 pin_run_as_build:
   bzip2:
     max_pin: x
