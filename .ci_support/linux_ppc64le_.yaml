@@ -76,7 +76,7 @@ pin_run_as_build:
   zlib:
     max_pin: x.x
 poppler:
-- '22.01'
+- '22.04'
 target_platform:
 - linux-ppc64le
 zip_keys:
