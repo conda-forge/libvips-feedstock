@@ -35,11 +35,11 @@ giflib:
 glib:
 - '2'
 hdf5:
-- 1.12.1
+- 1.12.2
 jpeg:
 - '9'
 libmatio:
-- 1.5.21
+- 1.5.23
 libpng:
 - '1.6'
 librsvg:
