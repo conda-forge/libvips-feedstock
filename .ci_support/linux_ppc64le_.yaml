@@ -5,7 +5,7 @@ c_compiler:
 c_compiler_version:
 - '10'
 cairo:
-- '1.16'
+- '1'
 cdt_name:
 - cos7
 cfitsio:
@@ -25,7 +25,7 @@ expat:
 fftw:
 - '3'
 fontconfig:
-- '2.13'
+- '2'
 freetype:
 - '2'
 gdk_pixbuf:
@@ -51,29 +51,7 @@ libwebp:
 pango:
 - '1.50'
 pin_run_as_build:
-  bzip2:
-    max_pin: x
-  cairo:
-    max_pin: x.x
-  fftw:
-    max_pin: x
-  fontconfig:
-    max_pin: x
-  freetype:
-    max_pin: x
-  jpeg:
-    max_pin: x
-  libpng:
-    max_pin: x.x
-  librsvg:
-    max_pin: x
-  libtiff:
-    max_pin: x
-  pango:
-    max_pin: x.x
   poppler:
-    max_pin: x.x
-  zlib:
     max_pin: x.x
 poppler:
 - '22.04'
