@@ -6,7 +6,7 @@
 #   to turbo as well.
 
 {% set name = "libvips" %}
-{% set version = "8.13.1" %}
+{% set version = "8.13.2" %}
 
 package:
   name: {{ name|lower }}
@@ -14,10 +14,10 @@ package:
 
 source:
   url: https://github.com/libvips/libvips/releases/download/v{{ version }}/vips-{{ version }}.tar.gz
-  sha256: ad377b7e561bb2118de9a3864fcaa60c61ba7f47e849f6044d1b339906197702
+  sha256: 41db5ed40a22ad50f8f37782e1ae5bac76f9f2e0b5731728f97c55f245f1da2a
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   run_exports:
     # Seems rather stable between minor versions. Only pin the major version
