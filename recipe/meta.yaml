@@ -45,7 +45,7 @@ requirements:
     - gstreamer-orc
     - hdf5
     - imagemagick
-    - jpeg
+    - libjpeg-turbo
     - lcms2
     - libexif
     - libgsf
