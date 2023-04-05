@@ -34,8 +34,8 @@ glib:
 - '2'
 hdf5:
 - 1.14.0
-jpeg:
-- '9'
+libjpeg_turbo:
+- 2.1.5
 libmatio:
 - 1.5.23
 libpng:
