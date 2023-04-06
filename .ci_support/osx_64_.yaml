@@ -1,7 +1,5 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
-bzip2:
-- '1'
 c_compiler:
 - clang
 c_compiler_version:
@@ -24,16 +22,8 @@ fftw:
 - '3'
 fontconfig:
 - '2'
-freetype:
-- '2'
-gdk_pixbuf:
-- '2'
-giflib:
-- '5.2'
 glib:
 - '2'
-hdf5:
-- 1.14.0
 libjpeg_turbo:
 - 2.1.5
 libmatio:
