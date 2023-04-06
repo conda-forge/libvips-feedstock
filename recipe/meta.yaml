@@ -1,5 +1,5 @@
 # Notes
-# - `niftiio`, `openexr` and `libheif` are missing
+# - `niftiio`, `openexr` are missing
 
 {% set name = "libvips" %}
 {% set version = "8.14.1" %}
@@ -34,18 +34,13 @@ requirements:
     # wow... g-ir-scanner is really annoying
     # we will need to build everything for the native architecture to scan it
     # https://gitlab.gnome.org/GNOME/gobject-introspection/-/issues/462
-    - bzip2                                  # [build_platform != target_platform]
     - cairo                                  # [build_platform != target_platform]
     - cfitsio                                # [build_platform != target_platform]
     - expat                                  # [build_platform != target_platform]
     - fftw                                   # [build_platform != target_platform]
     - fontconfig                             # [build_platform != target_platform]
-    - freetype                               # [build_platform != target_platform]
-    - gdk-pixbuf                             # [build_platform != target_platform]
-    - giflib                                 # [build_platform != target_platform]
     - glib                                   # [build_platform != target_platform]
     - gstreamer-orc                          # [build_platform != target_platform]
-    - hdf5                                   # [build_platform != target_platform]
     - libjpeg-turbo                          # [build_platform != target_platform]
     - imagemagick                            # [build_platform != target_platform]
     - lcms2                                  # [build_platform != target_platform]
@@ -64,18 +59,13 @@ requirements:
     - gettext                                # [(build_platform != target_platform) and osx]
   host:
     - libgirepository
-    - bzip2
     - cairo
     - cfitsio
     - expat
     - fftw
     - fontconfig
-    - freetype
-    - gdk-pixbuf
-    - giflib
     - glib
     - gstreamer-orc
-    - hdf5
     - imagemagick
     - libjpeg-turbo
     - lcms2
