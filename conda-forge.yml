@@ -13,4 +13,4 @@ provider:
   linux_ppc64le: default
 test_on_native_only: true
 azure:
-  store_build_artifacts: False
+  store_build_artifacts: True
