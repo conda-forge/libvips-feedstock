@@ -54,7 +54,7 @@ pin_run_as_build:
   poppler:
     max_pin: x.x
 poppler:
-- '23.03'
+- '23.04'
 target_platform:
 - linux-ppc64le
 zip_keys:
