@@ -65,7 +65,7 @@ fi
 # https://gitlab.gnome.org/GNOME/gobject-introspection/-/issues/462
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$BUILD_PREFIX/lib/pkgconfig"
 
-meson setup build ${MESON_ARGS} --prefix="${PREFIX}" -Dlibdir=lib
+meson setup build ${MESON_ARGS} --prefix="${PREFIX}" -Dlibdir=lib --timeout-multiplier 0
 
 ninja -C build -j ${CPU_COUNT}
 
