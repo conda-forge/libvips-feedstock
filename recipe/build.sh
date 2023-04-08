@@ -24,6 +24,7 @@ if [ "${CONDA_BUILD_CROSS_COMPILATION}" = "1" ]; then
         # by glib are the same for the native and cross builds
         export GI_CROSS_LAUNCHER=$BUILD_PREFIX/libexec/gi-cross-launcher-save.sh
         ninja -C native-build -j ${CPU_COUNT}
+        ninja -C native-build install -j ${CPU_COUNT}
     )
 
     export GI_CROSS_LAUNCHER=$BUILD_PREFIX/libexec/gi-cross-launcher-load.sh
