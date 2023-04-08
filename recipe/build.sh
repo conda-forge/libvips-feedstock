@@ -71,7 +71,7 @@ ninja -C build -j ${CPU_COUNT}
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
 if [[ "${target_platform}" != "linux-ppc64le" ]]; then
-  ninja -C build test --timeout-multiplier 0 || (cat test/test-suite.log && echo "ERROR: make check failed, see above" && exit 1)
+  meson test -C build --timeout-multiplier 0
 fi
 fi
 
