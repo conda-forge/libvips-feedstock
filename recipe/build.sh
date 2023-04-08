@@ -75,4 +75,4 @@ if [[ "${target_platform}" != "linux-ppc64le" ]]; then
 fi
 fi
 
-ninja -C build install
+meson install -C build
