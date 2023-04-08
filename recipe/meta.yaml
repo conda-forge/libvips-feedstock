@@ -1,49 +1,71 @@
 # Notes
-# - `niftiio`, `openexr` and `libheif` are missing
-#
-# - `imagemagick` is built with `jpeg`, not `libjpeg-turbo`, so we must use
-#   `jpeg` too. This is very unfortunate. It would be good if IM could move
-#   to turbo as well.
+# - `niftiio`, `openexr` are missing
 
 {% set name = "libvips" %}
-{% set version = "8.13.3" %}
+{% set version = "8.14.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/libvips/libvips/releases/download/v{{ version }}/vips-{{ version }}.tar.gz
-  sha256: 4eff5cdc8dbe1a05a926290a99014e20ba386f5dcca38d9774bef61413435d4c
+  url: https://github.com/libvips/libvips/releases/download/v{{ version }}/vips-{{ version }}.tar.xz
+  sha256: 5abde2a61f99ced7be4c32ccb13a654256eb7a0f6f0520ab61cc11412a1233fa
 
 build:
-  number: 9
+  number: 0
   skip: true  # [win]
   run_exports:
     # Seems rather stable between minor versions. Only pin the major version
     # https://abi-laboratory.pro/index.php?view=timeline&l=vips
     - {{ pin_subpackage('libvips', max_pin='x') }}
+  ignore_run_exports_from:
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
 
 requirements:
   build:
-    - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - make
+    - ninja
+    - meson
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - pkg-config        # [not win]
+    - gobject-introspection
+    # wow... g-ir-scanner is really annoying
+    # we will need to build everything for the native architecture to scan it
+    # https://gitlab.gnome.org/GNOME/gobject-introspection/-/issues/462
+    - cairo                                  # [build_platform != target_platform]
+    - cfitsio                                # [build_platform != target_platform]
+    - expat                                  # [build_platform != target_platform]
+    - fftw                                   # [build_platform != target_platform]
+    - fontconfig                             # [build_platform != target_platform]
+    - glib                                   # [build_platform != target_platform]
+    - gstreamer-orc                          # [build_platform != target_platform]
+    - libjpeg-turbo                          # [build_platform != target_platform]
+    - imagemagick                            # [build_platform != target_platform]
+    - lcms2                                  # [build_platform != target_platform]
+    - libexif                                # [build_platform != target_platform]
+    - libgsf                                 # [build_platform != target_platform]
+    - libmatio                               # [build_platform != target_platform]
+    - libpng                                 # [build_platform != target_platform]
+    - librsvg                                # [build_platform != target_platform]
+    - libtiff                                # [build_platform != target_platform]
+    - libwebp                                # [build_platform != target_platform]
+    - openslide                              # [build_platform != target_platform]
+    - pango                                  # [build_platform != target_platform]
+    - poppler                                # [build_platform != target_platform]
+    - zlib                                   # [build_platform != target_platform]
+    - libheif                                # [build_platform != target_platform]
+    - gettext                                # [(build_platform != target_platform) and osx]
   host:
-    - bzip2
+    - libgirepository
     - cairo
     - cfitsio
     - expat
     - fftw
     - fontconfig
-    - freetype
-    - gdk-pixbuf
-    - giflib
     - glib
     - gstreamer-orc
-    - hdf5
     - imagemagick
     - libjpeg-turbo
     - lcms2
@@ -58,6 +80,9 @@ requirements:
     - pango
     - poppler
     - zlib
+    - libheif
+    - openjpeg
+    - gettext                                # [osx]
   run:
     - gstreamer-orc
     - libexif
@@ -73,7 +98,7 @@ about:
   home: https://libvips.github.io/libvips
   license: LGPL-2.1-or-later
   license_family: LGPL
-  license_file: COPYING
+  license_file: LICENSE
   summary: A fast image processing library with low memory needs
   description: |
     libvips is a demand-driven, horizontally threaded image processing
