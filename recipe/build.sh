@@ -67,7 +67,7 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$BUILD_PREFIX/lib/pkgconfig"
 
 meson setup build ${MESON_ARGS} --prefix="${PREFIX}" -Dlibdir=lib
 
-ninja -C build -j ${CPU_COUNT}
+meson compile -C build -j ${CPU_COUNT}
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
 if [[ "${target_platform}" != "linux-ppc64le" ]]; then
