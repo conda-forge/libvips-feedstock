@@ -2,7 +2,7 @@
 # - `niftiio`, `openexr` are missing
 
 {% set name = "libvips" %}
-{% set version = "8.14.1" %}
+{% set version = "8.14.2" %}
 
 package:
   name: {{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/libvips/libvips/releases/download/v{{ version }}/vips-{{ version }}.tar.xz
-  sha256: 5abde2a61f99ced7be4c32ccb13a654256eb7a0f6f0520ab61cc11412a1233fa
+  sha256: 27dad021f0835a5ab14e541d02abd41e4c3bd012d2196438df5a9e754984f7ce
 
 build:
   number: 0
