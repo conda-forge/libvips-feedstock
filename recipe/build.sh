@@ -65,13 +65,13 @@ fi
 # https://gitlab.gnome.org/GNOME/gobject-introspection/-/issues/462
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$BUILD_PREFIX/lib/pkgconfig"
 
-meson setup build ${MESON_ARGS} --prefix="${PREFIX}" -Dlibdir=lib --timeout-multiplier 0
+meson setup build ${MESON_ARGS} --prefix="${PREFIX}" -Dlibdir=lib
 
 ninja -C build -j ${CPU_COUNT}
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
 if [[ "${target_platform}" != "linux-ppc64le" ]]; then
-  ninja -C build test || (cat test/test-suite.log && echo "ERROR: make check failed, see above" && exit 1)
+  ninja -C build test --timeout-multiplier 0 || (cat test/test-suite.log && echo "ERROR: make check failed, see above" && exit 1)
 fi
 fi
 
