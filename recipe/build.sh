@@ -71,7 +71,8 @@ meson setup build ${MESON_ARGS} --prefix="${PREFIX}" -Dlibdir=lib
 meson compile -C build -j ${CPU_COUNT}
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
-    meson test -C build --timeout-multiplier 0
+    # Increase the test timeout when running under emulation
+    meson test -C build ${CROSSCOMPILING_EMULATOR:+--timeout-multiplier=16}
 fi
 
 meson install -C build
