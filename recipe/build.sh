@@ -71,9 +71,7 @@ meson setup build ${MESON_ARGS} --prefix="${PREFIX}" -Dlibdir=lib
 meson compile -C build -j ${CPU_COUNT}
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
-if [[ "${target_platform}" != "linux-ppc64le" ]]; then
-  meson test -C build --timeout-multiplier 0
-fi
+    meson test -C build --timeout-multiplier 0
 fi
 
 meson install -C build
