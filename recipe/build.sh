@@ -1,6 +1,11 @@
  #!/usr/bin/env bash
 set -ex
 
+meson_config_args=(
+    # -Dintrospection=enabled # libvips >= 8.15 - https://github.com/libvips/libvips/pull/3432
+    -Dintrospection=true
+)
+
 if [ "${CONDA_BUILD_CROSS_COMPILATION}" = "1" ]; then
     unset _CONDA_PYTHON_SYSCONFIGDATA_NAME
     (
@@ -19,6 +24,7 @@ if [ "${CONDA_BUILD_CROSS_COMPILATION}" = "1" ]; then
         unset CXXFLAGS
 
         meson setup native-build \
+            "${meson_config_args[@]}" \
             --buildtype=release \
             --prefix=${BUILD_PREFIX} \
             -Dlibdir=lib
@@ -52,6 +58,7 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$BUILD_PREFIX/lib/pkgconfig
 
 meson setup build \
     ${MESON_ARGS} \
+    "${meson_config_args[@]}" \
     --prefix=${PREFIX} \
     -Dlibdir=lib
 meson compile -C build -j ${CPU_COUNT}
