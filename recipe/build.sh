@@ -19,6 +19,7 @@ if [ "${CONDA_BUILD_CROSS_COMPILATION}" = "1" ]; then
         unset CXXFLAGS
 
         meson setup native-build \
+            --buildtype=release \
             --prefix=${BUILD_PREFIX} \
             -Dlibdir=lib
 
