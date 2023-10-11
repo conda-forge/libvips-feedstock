@@ -31,7 +31,7 @@ fontconfig:
 glib:
 - '2'
 libjpeg_turbo:
-- 2.1.5
+- '3'
 libmatio:
 - 1.5.23
 libpng:
