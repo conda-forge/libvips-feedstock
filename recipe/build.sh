@@ -2,8 +2,7 @@
 set -ex
 
 meson_config_args=(
-    # -Dintrospection=enabled # libvips >= 8.15 - https://github.com/libvips/libvips/pull/3432
-    -Dintrospection=true
+    -Dintrospection=enabled
 )
 
 if [ "${CONDA_BUILD_CROSS_COMPILATION}" = "1" ]; then
