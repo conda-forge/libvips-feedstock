@@ -33,7 +33,7 @@ glib:
 libjpeg_turbo:
 - '3'
 libmatio:
-- 1.5.24
+- 1.5.26
 libpng:
 - '1.6'
 librsvg:
