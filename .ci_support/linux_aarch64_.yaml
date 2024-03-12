@@ -30,6 +30,8 @@ fontconfig:
 - '2'
 glib:
 - '2'
+lcms2:
+- '2'
 libjpeg_turbo:
 - '3'
 libmatio:
@@ -52,7 +54,7 @@ pin_run_as_build:
   poppler:
     max_pin: x.x
 poppler:
-- '24.02'
+- '24.03'
 target_platform:
 - linux-aarch64
 zip_keys:
