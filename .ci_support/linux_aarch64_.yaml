@@ -39,7 +39,7 @@ lcms2:
 libjpeg_turbo:
 - '3'
 libmatio:
-- 1.5.26
+- 1.5.27
 libpng:
 - '1.6'
 librsvg:
