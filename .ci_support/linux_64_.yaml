@@ -49,7 +49,7 @@ openjpeg:
 openslide:
 - '4'
 pango:
-- '1.50'
+- '1'
 pin_run_as_build:
   poppler:
     max_pin: x.x
