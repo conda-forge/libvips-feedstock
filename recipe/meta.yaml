@@ -13,7 +13,7 @@ source:
   sha256: a2ab15946776ca7721d11cae3215f20f1f097b370ff580cd44fc0f19387aee84
 
 build:
-  number: 4
+  number: 5
   skip: true  # [win]
   run_exports:
     # Seems rather stable between minor versions. Only pin the major version
@@ -41,7 +41,7 @@ requirements:
     - fftw                                   # [build_platform != target_platform]
     - fontconfig                             # [build_platform != target_platform]
     - glib                                   # [build_platform != target_platform]
-    - gstreamer-orc                          # [build_platform != target_platform]
+    - libhwy                                 # [build_platform != target_platform]
     - libjpeg-turbo                          # [build_platform != target_platform]
     - imagemagick                            # [build_platform != target_platform]
     - lcms2                                  # [build_platform != target_platform]
@@ -66,7 +66,7 @@ requirements:
     - fftw
     - fontconfig
     - glib
-    - gstreamer-orc
+    - libhwy
     - imagemagick
     - libjpeg-turbo
     - lcms2
@@ -85,7 +85,6 @@ requirements:
     - openjpeg
     - gettext                                # [osx]
   run:
-    - gstreamer-orc
     - libexif
     - imagemagick
     - openslide
