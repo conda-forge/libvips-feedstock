@@ -58,7 +58,7 @@ pin_run_as_build:
   poppler:
     max_pin: x.x
 poppler:
-- '24.07'
+- '24.08'
 target_platform:
 - osx-arm64
 zip_keys:
