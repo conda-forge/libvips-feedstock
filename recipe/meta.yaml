@@ -46,7 +46,7 @@ requirements:
     - imagemagick                            # [build_platform != target_platform]
     - lcms2                                  # [build_platform != target_platform]
     - libexif                                # [build_platform != target_platform]
-    - libgsf                                 # [build_platform != target_platform]
+    - libarchive                             # [build_platform != target_platform]
     - libmatio                               # [build_platform != target_platform]
     - libpng                                 # [build_platform != target_platform]
     - librsvg                                # [build_platform != target_platform]
