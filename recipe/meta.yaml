@@ -13,7 +13,7 @@ source:
   sha256: 3e27d9f536eafad64013958fe9e8a1964c90b564c731d49db7c1a1c11b1052a0
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
   run_exports:
     # Seems rather stable between minor versions. Only pin the major version
@@ -46,7 +46,7 @@ requirements:
     - imagemagick                            # [build_platform != target_platform]
     - lcms2                                  # [build_platform != target_platform]
     - libexif                                # [build_platform != target_platform]
-    - libgsf                                 # [build_platform != target_platform]
+    - libarchive                             # [build_platform != target_platform]
     - libmatio                               # [build_platform != target_platform]
     - libpng                                 # [build_platform != target_platform]
     - librsvg                                # [build_platform != target_platform]
@@ -71,7 +71,7 @@ requirements:
     - libjpeg-turbo
     - lcms2
     - libexif
-    - libgsf
+    - libarchive
     - libmatio
     - libpng
     - librsvg

@@ -3,7 +3,7 @@ BUILD:
 c_compiler:
 - gcc
 c_compiler_version:
-- '12'
+- '13'
 c_stdlib:
 - sysroot
 c_stdlib_version:
@@ -23,7 +23,7 @@ channel_targets:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '12'
+- '13'
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 expat:
@@ -36,6 +36,8 @@ glib:
 - '2'
 lcms2:
 - '2'
+libarchive:
+- '3.7'
 libhwy:
 - '1.1'
 libjpeg_turbo:
@@ -56,9 +58,6 @@ openslide:
 - '4'
 pango:
 - '1'
-pin_run_as_build:
-  poppler:
-    max_pin: x.x
 poppler:
 - '24.08'
 target_platform:
