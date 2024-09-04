@@ -71,7 +71,7 @@ requirements:
     - libjpeg-turbo
     - lcms2
     - libexif
-    - libgsf
+    - libarchive
     - libmatio
     - libpng
     - librsvg
