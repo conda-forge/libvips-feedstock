@@ -2,7 +2,7 @@
 # - `niftiio`, `openexr` are missing
 
 {% set name = "libvips" %}
-{% set version = "8.15.3" %}
+{% set version = "8.15.4" %}
 
 package:
   name: {{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://github.com/libvips/libvips/releases/download/v{{ version }}/vips-{{ version }}.tar.xz
-  sha256: 3e27d9f536eafad64013958fe9e8a1964c90b564c731d49db7c1a1c11b1052a0
+  sha256: 7db6b61bda621bc996a8416839075cfcf9b9f95d971460f5621aebf7158cef96
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   run_exports:
     # Seems rather stable between minor versions. Only pin the major version
