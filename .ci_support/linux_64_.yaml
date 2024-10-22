@@ -45,7 +45,9 @@ libpng:
 librsvg:
 - '2'
 libtiff:
-- '4.6'
+- '4.7'
+libvips:
+- '8'
 libwebp:
 - '1'
 openjpeg:
