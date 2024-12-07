@@ -57,7 +57,7 @@ openslide:
 pango:
 - '1'
 poppler:
-- '24.11'
+- '24.12'
 target_platform:
 - linux-ppc64le
 zip_keys:
