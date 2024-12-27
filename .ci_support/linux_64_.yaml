@@ -34,6 +34,8 @@ lcms2:
 - '2'
 libarchive:
 - '3.7'
+libheif:
+- '1.18'
 libhwy:
 - '1.1'
 libjpeg_turbo:
