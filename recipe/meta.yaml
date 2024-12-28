@@ -13,7 +13,7 @@ source:
   sha256: 6eca46c6ba5fac86224fd69007741012b0ea1f9aa1fcb9256b0cbc2faf768563
 
 build:
-  number: 5
+  number: 6
   skip: true  # [win]
   run_exports:
     # Seems rather stable between minor versions. Only pin the major version
@@ -84,6 +84,8 @@ requirements:
     - libheif
     - openjpeg
     - gettext                                # [osx]
+    # needed to find openslide on linux
+    - xorg-xorgproto                         # [linux]
   run:
     - libexif
     - imagemagick
@@ -93,6 +95,7 @@ requirements:
 test:
   commands:
     - vips --version
+    - python -c 'import pyvips; assert pyvips.type_find("VipsForeignLoad", "openslideload")'
 
 about:
   home: https://libvips.github.io/libvips
