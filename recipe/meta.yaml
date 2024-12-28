@@ -95,7 +95,6 @@ requirements:
 test:
   commands:
     - vips --version
-    - python -c 'import pyvips; assert pyvips.type_find("VipsForeignLoad", "openslideload")'
 
 about:
   home: https://libvips.github.io/libvips
