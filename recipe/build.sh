@@ -3,6 +3,7 @@ set -ex
 
 meson_config_args=(
     -Dintrospection=enabled
+    -Dopenslide=enabled
 )
 
 if [ "${CONDA_BUILD_CROSS_COMPILATION}" = "1" ]; then
