@@ -38,6 +38,8 @@ libheif:
 - '1.19'
 libhwy:
 - '1.1'
+libiconv:
+- '1'
 libjpeg_turbo:
 - '3'
 libmatio:
@@ -48,8 +50,6 @@ librsvg:
 - '2'
 libtiff:
 - '4.7'
-libvips:
-- '8'
 libwebp:
 - '1'
 macos_machine:
