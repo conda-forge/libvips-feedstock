@@ -4,9 +4,9 @@ set -ex
 # Stopgap while https://github.com/conda-forge/libiconv-feedstock/pull/46
 # it will have a similar file generated
 iconv_pc_created=false
-if [[ ! -z "${libiconv}" ]] && [[ ! -f ${PREFIX}/lib/pkgconfig/iconv.pc ]]; then
+if [[ -n "${libiconv}" ]] && [[ ! -f ${PREFIX}/lib/pkgconfig/iconv.pc ]]; then
     iconv_pc_created=true
-    echo >${PREFIX}/lib/pkgconfig/iconv.pc <<EOF
+    cat > ${PREFIX}/lib/pkgconfig/iconv.pc <<EOF
 prefix=${PREFIX}
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
@@ -37,8 +37,8 @@ meson_config_args=(
 )
 
 if [ "${CONDA_BUILD_CROSS_COMPILATION}" = "1" ]; then
-    if [[ ! -z "${libiconv}" ]] && [[ ! -f ${PREFIX}/lib/pkgconfig/iconv.pc ]]; then
-        echo >${BUILD_PREFIX}/lib/pkgconfig/iconv.pc <<EOF
+    if [[ -n "${libiconv}" ]] && [[ ! -f ${BUILD_PREFIX}/lib/pkgconfig/iconv.pc ]]; then
+        cat > ${BUILD_PREFIX}/lib/pkgconfig/iconv.pc <<EOF
 prefix=${BUILD_PREFIX}
 exec_prefix=\${prefix}
 libdir=\${exec_prefix}/lib
