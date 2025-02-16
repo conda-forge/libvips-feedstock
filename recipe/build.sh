@@ -1,12 +1,47 @@
  #!/usr/bin/env bash
 set -ex
 
+# Stopgap while https://github.com/conda-forge/libiconv-feedstock/pull/46
+# it will have a similar file generated
+iconv_pc_created=false
+if [[ ! -z "${libiconv}" ]] && [[ ! -f ${PREFIX}/lib/pkgconfig/iconv.pc ]]; then
+    iconv_pc_created=true
+    echo >${PREFIX}/lib/pkgconfig/iconv.pc <<EOF
+prefix=${PREFIX}
+exec_prefix=\${prefix}
+libdir=\${exec_prefix}/lib
+includedir=\${prefix}/include
+Name: iconv
+Description: GNU Unicode conversion library
+Version: ${libiconv}
+Libs: -L\${libdir} -liconv
+Cflags: -I\${includedir}
+EOF
+fi
+
+
+pkg-config --exists --debug libarchive
+
 meson_config_args=(
     -Dintrospection=enabled
     -Dopenslide=enabled
 )
 
 if [ "${CONDA_BUILD_CROSS_COMPILATION}" = "1" ]; then
+    if [[ ! -z "${libiconv}" ]] && [[ ! -f ${PREFIX}/lib/pkgconfig/iconv.pc ]]; then
+        echo >${BUILD_PREFIX}/lib/pkgconfig/iconv.pc <<EOF
+prefix=${BUILD_PREFIX}
+exec_prefix=\${prefix}
+libdir=\${exec_prefix}/lib
+includedir=\${prefix}/include
+Name: iconv
+Description: GNU Unicode conversion library
+Version: ${libiconv}
+Libs: -L\${libdir} -liconv
+Cflags: -I\${includedir}
+EOF
+    fi
+
     unset _CONDA_PYTHON_SYSCONFIGDATA_NAME
     (
         mkdir -p native-build
@@ -69,3 +104,7 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}
 fi
 
 meson install -C build
+
+if [[ "${iconv_pc_created}" == "true" ]]; then
+    rm -f ${PREFIX}/lib/pkgconfig/iconv.pc
+fi

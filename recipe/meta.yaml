@@ -1,11 +1,10 @@
 # Notes
 # - `niftiio`, `openexr` are missing
 
-{% set name = "libvips" %}
 {% set version = "8.16.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: libvips
   version: {{ version }}
 
 source:
@@ -13,7 +12,7 @@ source:
   sha256: 6eca46c6ba5fac86224fd69007741012b0ea1f9aa1fcb9256b0cbc2faf768563
 
 build:
-  number: 6
+  number: 7
   skip: true  # [win]
   run_exports:
     # Seems rather stable between minor versions. Only pin the major version
@@ -25,12 +24,12 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - ninja
     - meson
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - pkg-config        # [not win]
+    - pkg-config                             # [not win]
     - gobject-introspection
     # wow... g-ir-scanner is really annoying
     # we will need to build everything for the native architecture to scan it
@@ -47,6 +46,8 @@ requirements:
     - lcms2                                  # [build_platform != target_platform]
     - libexif                                # [build_platform != target_platform]
     - libarchive                             # [build_platform != target_platform]
+    # Needed to find libarchive
+    - libiconv                               # [build_platform != target_platform and osx]
     - libmatio                               # [build_platform != target_platform]
     - libpng                                 # [build_platform != target_platform]
     - librsvg                                # [build_platform != target_platform]
@@ -72,6 +73,8 @@ requirements:
     - lcms2
     - libexif
     - libarchive
+    # Needed to find libarchive
+    - libiconv                               # [osx]
     - libmatio
     - libpng
     - librsvg
@@ -89,12 +92,12 @@ requirements:
   run:
     - libexif
     - imagemagick
-    - openslide
-    - poppler
 
 test:
   commands:
     - vips --version
+    - vips --vips-config
+    - vips --vips-config | grep libarchive | grep true
 
 about:
   home: https://libvips.github.io/libvips
