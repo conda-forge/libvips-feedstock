@@ -23,8 +23,17 @@ fi
 pkg-config --exists --debug libarchive
 
 meson_config_args=(
-    -Dintrospection=enabled
-    -Dopenslide=enabled
+    -Dauto_features=enabled
+    -Dcgif=disabled
+    -Dimagequant=disabled
+    -Djpeg-xl=disabled
+    -Dmatio=disabled
+    -Dnifti=disabled
+    -Dopenexr=disabled
+    -Dpdfium=disabled
+    -Dquantizr=disabled
+    # https://github.com/conda-forge/libvips-feedstock/issues/25
+    -Dspng=disabled
 )
 
 if [ "${CONDA_BUILD_CROSS_COMPILATION}" = "1" ]; then
