@@ -12,7 +12,7 @@ source:
   sha256: d114d7c132ec5b45f116d654e17bb4af84561e3041183cd4bfd79abfb85cf724
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     # Seems rather stable between minor versions. Only pin the major version
