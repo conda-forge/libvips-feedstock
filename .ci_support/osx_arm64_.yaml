@@ -37,7 +37,7 @@ libarchive:
 libheif:
 - '1.19'
 libhwy:
-- '1.1'
+- '1.2'
 libiconv:
 - '1'
 libjpeg_turbo:
