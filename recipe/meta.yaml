@@ -46,6 +46,9 @@ requirements:
     - lcms2                                  # [build_platform != target_platform]
     - libexif                                # [build_platform != target_platform]
     - libarchive                             # [build_platform != target_platform]
+    # Specify lgpl so that there isn't any concern about the license
+    # which which this software was built with.
+    - libarchive * lgpl_*                    # [build_platform != target_platform]
     # Needed to find libarchive
     - libiconv                               # [build_platform != target_platform and osx]
     - libmatio                               # [build_platform != target_platform]
@@ -73,6 +76,9 @@ requirements:
     - lcms2
     - libexif
     - libarchive
+    # Specify lgpl so that there isn't any concern about the license
+    # which which this software was built with.
+    - libarchive * lgpl_*
     # Needed to find libarchive
     - libiconv                               # [osx]
     - libmatio
