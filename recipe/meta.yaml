@@ -59,7 +59,7 @@ requirements:
     - poppler                                # [build_platform != target_platform]
     - zlib                                   # [build_platform != target_platform]
     - libheif                                # [build_platform != target_platform]
-    - gettext                                # [build_platform != target_platform and osx]
+    - gettext                                # [(build_platform != target_platform) and osx]
   host:
     - libgirepository
     - cairo
