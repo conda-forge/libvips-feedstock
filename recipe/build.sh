@@ -5,12 +5,13 @@ meson_config_args=(
     -Dauto_features=enabled
     -Dcgif=disabled
     -Dimagequant=disabled
-    -Djpeg-xl=disabled
     -Dmatio=disabled
     -Dnifti=disabled
     -Dopenexr=disabled
     -Dpdfium=disabled
     -Dquantizr=disabled
+    # Uncomment when libvips 8.18 is released.
+    #-Duhdr=disabled
     # https://github.com/conda-forge/libvips-feedstock/issues/25
     -Dspng=disabled
 )
