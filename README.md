@@ -208,5 +208,6 @@ Feedstock Maintainers
 
 * [@hmaarrfk](https://github.com/hmaarrfk/)
 * [@jcupitt](https://github.com/jcupitt/)
+* [@kleisauke](https://github.com/kleisauke/)
 * [@sebastian-luna-valero](https://github.com/sebastian-luna-valero/)
 
