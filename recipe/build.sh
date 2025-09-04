@@ -5,7 +5,6 @@ meson_config_args=(
     -Dauto_features=enabled
     -Dcgif=disabled
     -Dimagequant=disabled
-    -Djpeg-xl=disabled
     -Dmatio=disabled
     -Dnifti=disabled
     -Dopenexr=disabled
