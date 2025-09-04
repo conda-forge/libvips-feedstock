@@ -52,6 +52,8 @@ requirements:
     - libarchive * lgpl_*                    # [build_platform != target_platform]
     - libmatio                               # [build_platform != target_platform]
     - libpng                                 # [build_platform != target_platform]
+    # Uncomment when libvips 8.18 is released.
+    #- libraw                                 # [build_platform != target_platform]
     - librsvg                                # [build_platform != target_platform]
     - libtiff                                # [build_platform != target_platform]
     - libwebp                                # [build_platform != target_platform]
@@ -81,6 +83,8 @@ requirements:
     - libarchive * lgpl_*
     - libmatio
     - libpng
+    # Uncomment when libvips 8.18 is released.
+    #- libraw
     - librsvg
     - libtiff
     - libwebp
