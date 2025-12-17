@@ -10,10 +10,7 @@ meson_config_args=(
     -Dopenexr=disabled
     -Dpdfium=disabled
     -Dquantizr=disabled
-    # Uncomment when libvips 8.18 is released.
-    #-Duhdr=disabled
-    # https://github.com/conda-forge/libvips-feedstock/issues/25
-    -Dspng=disabled
+    -Duhdr=disabled
 )
 
 if [ "${CONDA_BUILD_CROSS_COMPILATION}" = "1" ]; then
