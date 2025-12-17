@@ -1,7 +1,7 @@
 # Notes
-# - `cgif`, `imagequant`, `matio`, `niftiio`, `openexr`, `spng` are missing
+# - `cgif`, `imagequant`, `matio`, `niftiio`, `openexr`, `libuhdr` are missing
 
-{% set version = "8.17.3" %}
+{% set version = "8.18.0" %}
 
 package:
   name: libvips
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://github.com/libvips/libvips/releases/download/v{{ version }}/vips-{{ version }}.tar.xz
-  sha256: 41e9a1439cd57dcc6d4435a085e2cfe181d9da1962fa84a484f09e8b536e4b77
+  sha256: b85ab92280c30d22f5c8fe2f68b809cddb7eaac437d8c33474475dac84ddc574
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win]
   run_exports:
     # Seems rather stable between minor versions. Only pin the major version
@@ -52,8 +52,7 @@ requirements:
     - libarchive * lgpl_*                    # [build_platform != target_platform]
     - libmatio                               # [build_platform != target_platform]
     - libpng                                 # [build_platform != target_platform]
-    # Uncomment when libvips 8.18 is released.
-    #- libraw                                 # [build_platform != target_platform]
+    - libraw                                 # [build_platform != target_platform]
     - librsvg                                # [build_platform != target_platform]
     - libtiff                                # [build_platform != target_platform]
     - libwebp                                # [build_platform != target_platform]
@@ -83,8 +82,7 @@ requirements:
     - libarchive * lgpl_*
     - libmatio
     - libpng
-    # Uncomment when libvips 8.18 is released.
-    #- libraw
+    - libraw
     - librsvg
     - libtiff
     - libwebp
