@@ -1,7 +1,7 @@
 # Notes
 # - `cgif`, `imagequant`, `matio`, `niftiio`, `openexr`, `libuhdr` are missing
 
-{% set version = "8.18.1" %}
+{% set version = "8.18.2" %}
 
 package:
   name: libvips
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/libvips/libvips/releases/download/v{{ version }}/vips-{{ version }}.tar.xz
-  sha256: 3a0d641175013df712a348d5c528e5f0b46fcbfa4b00b30fcf228c631ffee485
+  sha256: a30d4aede16f1c2899c1a2241870f8a7409feafa38484bcdcdac113d6d6f8ff5
 
 build:
   number: 0
