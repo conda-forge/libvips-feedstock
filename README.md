@@ -197,6 +197,3 @@ Feedstock Maintainers
 * [@kleisauke](https://github.com/kleisauke/)
 * [@sebastian-luna-valero](https://github.com/sebastian-luna-valero/)
 
-
-<!-- dummy commit to enable rerendering -->
-
