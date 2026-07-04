@@ -42,6 +42,8 @@ libhwy:
 - '1.4'
 libjpeg_turbo:
 - '3'
+libjxl:
+- '0.12'
 libmatio:
 - 1.5.30
 libpng:
