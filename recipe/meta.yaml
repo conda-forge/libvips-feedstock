@@ -12,7 +12,7 @@ source:
   sha256: 2677bad6c422617fd1172d359c16af34e736965d042c214203a87187d26ff037
 
 build:
-  number: 0
+  number: 1
   script_env:
     # Switch default pkg-config implementation to pkgconf
     # https://github.com/conda-forge/conda-forge.github.io/issues/1880
