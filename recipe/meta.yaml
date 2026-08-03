@@ -1,7 +1,7 @@
 # Notes
 # - `cgif`, `imagequant`, `matio`, `niftiio`, `openexr`, `libuhdr` are missing
 
-{% set version = "8.18.4" %}
+{% set version = "8.18.5" %}
 
 package:
   name: libvips
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://github.com/libvips/libvips/releases/download/v{{ version }}/vips-{{ version }}.tar.xz
-  sha256: 2677bad6c422617fd1172d359c16af34e736965d042c214203a87187d26ff037
+  sha256: 8c4e6332d818249ed05ce98e36e6ed8a08e3249ac70f69680842ab2e5fee8510
 
 build:
-  number: 1
+  number: 0
   script_env:
     # Switch default pkg-config implementation to pkgconf
     # https://github.com/conda-forge/conda-forge.github.io/issues/1880
