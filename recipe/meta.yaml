@@ -12,7 +12,7 @@ source:
   sha256: 8c4e6332d818249ed05ce98e36e6ed8a08e3249ac70f69680842ab2e5fee8510
 
 build:
-  number: 0
+  number: 1
   script_env:
     # Switch default pkg-config implementation to pkgconf
     # https://github.com/conda-forge/conda-forge.github.io/issues/1880
@@ -47,7 +47,7 @@ requirements:
     - freetype                               # [build_platform != target_platform]
     - gettext                                # [(build_platform != target_platform) and osx]
     - glib                                   # [build_platform != target_platform]
-    - imagemagick                            # [(build_platform != target_platform) and unix]
+    - imagemagick * imagemagick_*            # [build_platform != target_platform]
     - lcms2                                  # [build_platform != target_platform]
     - libarchive                             # [build_platform != target_platform]
     # Specify lgpl so that there isn't any concern about the license
@@ -80,7 +80,7 @@ requirements:
     - freetype
     - gettext                                # [osx]
     - glib
-    - imagemagick                            # [unix]
+    - imagemagick * imagemagick_*
     - lcms2
     - libarchive
     # Specify lgpl so that there isn't any concern about the license
@@ -90,6 +90,7 @@ requirements:
     - libgirepository
     - libheif
     - libhwy
+    - libintl-devel                          # [win]
     - libjpeg-turbo
     - libjxl
     - libmatio
@@ -109,8 +110,8 @@ requirements:
     - xorg-xorgproto                         # [linux]
     - zlib
   run:
-    - imagemagick                            # [unix]
-    - libintl                                # [win]
+    # https://github.com/conda-forge/imagemagick-feedstock/pull/386
+    - {{ pin_compatible('imagemagick', max_pin='x.x.x') }}
 
 test:
   commands:
