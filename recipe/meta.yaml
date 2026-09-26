@@ -1,7 +1,7 @@
 # Notes
 # - `cgif`, `imagequant`, `matio`, `niftiio`, `openexr`, `libuhdr` are missing
 
-{% set version = "8.18.6" %}
+{% set version = "8.18.7" %}
 
 package:
   name: libvips
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/libvips/libvips/releases/download/v{{ version }}/vips-{{ version }}.tar.xz
-  sha256: 3c41e1d5458081bfa4a5bc54e116c46259c75c6760a18027764555632b9dda3e
+  sha256: 5baaead3b0bb20ffdb9e9ff09aa9fda08620923df77b63b436654cb5e0b3bf94
 
 build:
   number: 0
@@ -43,7 +43,7 @@ requirements:
     - expat                                  # [build_platform != target_platform]
     - fftw                                   # [build_platform != target_platform]
     - fontconfig                             # [build_platform != target_platform]
-    # needed for `pkgconf --cflags pangocairo`
+    # need freetype2.pc for `pkgconf --cflags pangocairo`
     - freetype                               # [build_platform != target_platform]
     - gettext                                # [(build_platform != target_platform) and osx]
     - glib                                   # [build_platform != target_platform]
@@ -54,6 +54,8 @@ requirements:
     # which this software was built with.
     - libarchive * lgpl_*                    # [build_platform != target_platform]
     - libexif                                # [build_platform != target_platform]
+    # need harfbuzz.pc for `pkgconf --cflags pangocairo`
+    - libharfbuzz-devel                      # [build_platform != target_platform]
     - libheif                                # [build_platform != target_platform]
     - libhwy                                 # [build_platform != target_platform]
     - libjpeg-turbo                          # [build_platform != target_platform]
@@ -64,7 +66,7 @@ requirements:
     - librsvg                                # [build_platform != target_platform]
     - libtiff                                # [build_platform != target_platform]
     - libwebp                                # [build_platform != target_platform]
-    # needed for `pkgconf --cflags librsvg-2.0`
+    # need libxml-2.0.pc for `pkgconf --cflags librsvg-2.0`
     - libxml2-devel                          # [build_platform != target_platform]
     - openslide                              # [build_platform != target_platform]
     - pango                                  # [build_platform != target_platform]
@@ -76,7 +78,7 @@ requirements:
     - expat
     - fftw
     - fontconfig
-    # needed for `pkgconf --cflags pangocairo`
+    # need freetype2.pc for `pkgconf --cflags pangocairo`
     - freetype
     - gettext                                # [osx]
     - glib
@@ -88,6 +90,8 @@ requirements:
     - libarchive * lgpl_*
     - libexif
     - libgirepository
+    # need harfbuzz.pc for `pkgconf --cflags pangocairo`
+    - libharfbuzz-devel
     - libheif
     - libhwy
     - libintl-devel                          # [win]
@@ -99,7 +103,7 @@ requirements:
     - librsvg
     - libtiff
     - libwebp
-    # needed for `pkgconf --cflags librsvg-2.0`
+    # need libxml-2.0.pc for `pkgconf --cflags librsvg-2.0`
     - libxml2-devel
     - openjpeg
     - openslide
