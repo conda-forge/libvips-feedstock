@@ -40,6 +40,8 @@ requirements:
     # https://gitlab.gnome.org/GNOME/gobject-introspection/-/issues/462
     - cairo                                  # [build_platform != target_platform]
     - cfitsio                                # [build_platform != target_platform]
+    # need dav1d.pc for `pkgconf --cflags libheif`
+    - dav1d-devel                            # [build_platform != target_platform]
     - expat                                  # [build_platform != target_platform]
     - fftw                                   # [build_platform != target_platform]
     - fontconfig                             # [build_platform != target_platform]
@@ -75,6 +77,8 @@ requirements:
   host:
     - cairo
     - cfitsio
+    # need dav1d.pc for `pkgconf --cflags libheif`
+    - dav1d-devel
     - expat
     - fftw
     - fontconfig
