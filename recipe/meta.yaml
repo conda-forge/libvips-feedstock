@@ -12,7 +12,7 @@ source:
   sha256: 5baaead3b0bb20ffdb9e9ff09aa9fda08620923df77b63b436654cb5e0b3bf94
 
 build:
-  number: 0
+  number: 1
   script_env:
     # Switch default pkg-config implementation to pkgconf
     # https://github.com/conda-forge/conda-forge.github.io/issues/1880
@@ -40,6 +40,8 @@ requirements:
     # https://gitlab.gnome.org/GNOME/gobject-introspection/-/issues/462
     - cairo                                  # [build_platform != target_platform]
     - cfitsio                                # [build_platform != target_platform]
+    # need dav1d.pc for `pkgconf --cflags libheif`
+    - dav1d-devel                            # [build_platform != target_platform]
     - expat                                  # [build_platform != target_platform]
     - fftw                                   # [build_platform != target_platform]
     - fontconfig                             # [build_platform != target_platform]
@@ -75,6 +77,8 @@ requirements:
   host:
     - cairo
     - cfitsio
+    # need dav1d.pc for `pkgconf --cflags libheif`
+    - dav1d-devel
     - expat
     - fftw
     - fontconfig
