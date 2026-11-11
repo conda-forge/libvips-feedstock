@@ -12,11 +12,7 @@ source:
   sha256: 5baaead3b0bb20ffdb9e9ff09aa9fda08620923df77b63b436654cb5e0b3bf94
 
 build:
-  number: 2
-  script_env:
-    # Switch default pkg-config implementation to pkgconf
-    # https://github.com/conda-forge/conda-forge.github.io/issues/1880
-    - PKG_CONFIG=pkgconf
+  number: 3
   run_exports:
     # Seems rather stable between minor versions. Only pin the major version
     # https://abi-laboratory.pro/index.php?view=timeline&l=vips

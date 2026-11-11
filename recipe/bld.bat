@@ -14,9 +14,6 @@ set meson_config_args=^
     -Duhdr=disabled ^
     -Dintrospection=disabled
 
-@REM Set pkg-config path so that host deps can be found
-set "PKG_CONFIG_PATH=%LIBRARY_LIB%\pkgconfig;%LIBRARY_PREFIX%\share\pkgconfig;%BUILD_PREFIX%\Library\lib\pkgconfig"
-
 @REM MSVC does not support `__attribute__((weak))`
 @REM Remove when libvips 8.19 is released (it builds with -Dfuzz=false by default)
 sed -i "/subdir('fuzz')/d" meson.build
