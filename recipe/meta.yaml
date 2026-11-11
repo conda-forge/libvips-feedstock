@@ -29,7 +29,7 @@ requirements:
     - ninja
     - meson
     - m2-sed                                 # [win]
-    - pkgconf
+    - pkgconf * pkg_config_*
     - gobject-introspection
     # wow... g-ir-scanner is really annoying
     # we will need to build everything for the native architecture to scan it
