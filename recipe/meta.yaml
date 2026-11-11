@@ -55,7 +55,6 @@ requirements:
     - libintl-devel                          # [win]
     - libjpeg-turbo
     - libjxl
-    - libmatio
     - libpng
     - libraw
     - librsvg
