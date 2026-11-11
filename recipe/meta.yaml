@@ -21,13 +21,13 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
-    - ninja
-    - meson
-    - m2-sed                                 # [win]
-    - pkgconf * pkg_config_*
+    - {{ stdlib('c') }}
     - gettext                                # [(build_platform != target_platform) and osx]
+    - m2-sed                                 # [win]
+    - meson
+    - ninja
+    - pkgconf * pkg_config_*
   host:
     - cairo
     - cfitsio
