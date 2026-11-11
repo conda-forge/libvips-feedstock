@@ -67,7 +67,7 @@ openslide:
 pango:
 - '1'
 poppler:
-- '26.07'
+- '26.11'
 target_platform:
 - osx-arm64
 zip_keys:
