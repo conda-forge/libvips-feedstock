@@ -12,68 +12,22 @@ source:
   sha256: 5baaead3b0bb20ffdb9e9ff09aa9fda08620923df77b63b436654cb5e0b3bf94
 
 build:
-  number: 2
-  script_env:
-    # Switch default pkg-config implementation to pkgconf
-    # https://github.com/conda-forge/conda-forge.github.io/issues/1880
-    - PKG_CONFIG=pkgconf
+  number: 3
   run_exports:
     # Seems rather stable between minor versions. Only pin the major version
     # https://abi-laboratory.pro/index.php?view=timeline&l=vips
     - {{ pin_subpackage('libvips', max_pin='x') }}
-  ignore_run_exports_from:
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
-    - cross-python_{{ target_platform }}     # [(build_platform != target_platform) and not win]
-    - ninja
-    - meson
-    - m2-sed                                 # [win]
-    - pkgconf
-    - gobject-introspection
-    # wow... g-ir-scanner is really annoying
-    # we will need to build everything for the native architecture to scan it
-    # https://gitlab.gnome.org/GNOME/gobject-introspection/-/issues/462
-    - cairo                                  # [build_platform != target_platform]
-    - cfitsio                                # [build_platform != target_platform]
-    # need dav1d.pc for `pkgconf --cflags libheif`
-    - dav1d-devel                            # [build_platform != target_platform]
-    - expat                                  # [build_platform != target_platform]
-    - fftw                                   # [build_platform != target_platform]
-    - fontconfig                             # [build_platform != target_platform]
-    # need freetype2.pc for `pkgconf --cflags pangocairo`
-    - freetype                               # [build_platform != target_platform]
+    - {{ stdlib('c') }}
     - gettext                                # [(build_platform != target_platform) and osx]
-    - glib                                   # [build_platform != target_platform]
-    - imagemagick * imagemagick_*            # [build_platform != target_platform]
-    - lcms2                                  # [build_platform != target_platform]
-    - libarchive                             # [build_platform != target_platform]
-    # Specify lgpl so that there isn't any concern about the license
-    # which this software was built with.
-    - libarchive * lgpl_*                    # [build_platform != target_platform]
-    - libexif                                # [build_platform != target_platform]
-    # need harfbuzz.pc for `pkgconf --cflags pangocairo`
-    - libharfbuzz-devel                      # [build_platform != target_platform]
-    - libheif                                # [build_platform != target_platform]
-    - libhwy                                 # [build_platform != target_platform]
-    - libjpeg-turbo                          # [build_platform != target_platform]
-    - libjxl                                 # [build_platform != target_platform]
-    - libmatio                               # [build_platform != target_platform]
-    - libpng                                 # [build_platform != target_platform]
-    - libraw                                 # [build_platform != target_platform]
-    - librsvg                                # [build_platform != target_platform]
-    - libtiff                                # [build_platform != target_platform]
-    - libwebp                                # [build_platform != target_platform]
-    # need libxml-2.0.pc for `pkgconf --cflags librsvg-2.0`
-    - libxml2-devel                          # [build_platform != target_platform]
-    - openslide                              # [build_platform != target_platform]
-    - pango                                  # [build_platform != target_platform]
-    - poppler                                # [build_platform != target_platform]
-    - zlib                                   # [build_platform != target_platform]
+    - m2-sed                                 # [win]
+    - meson
+    - ninja
+    - pkgconf * pkg_config_*
   host:
     - cairo
     - cfitsio
@@ -101,7 +55,6 @@ requirements:
     - libintl-devel                          # [win]
     - libjpeg-turbo
     - libjxl
-    - libmatio
     - libpng
     - libraw
     - librsvg
