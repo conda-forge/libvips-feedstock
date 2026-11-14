@@ -47,7 +47,6 @@ requirements:
     # which this software was built with.
     - libarchive * lgpl_*
     - libcgif
-
     - libexif
     - libgirepository
     # need harfbuzz.pc for `pkgconf --cflags pangocairo`
