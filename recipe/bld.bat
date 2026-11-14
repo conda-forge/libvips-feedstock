@@ -4,14 +4,14 @@ setlocal enabledelayedexpansion
 @REM Keep in sync with `meson_config_args` in `build.sh`.
 set meson_config_args=^
     -Dauto_features=enabled ^
-    -Dcgif=disabled ^
-    -Dimagequant=disabled ^
+    -Dcgif=enabled ^
+    -Dimagequant=enabled ^
     -Dmatio=disabled ^
     -Dnifti=disabled ^
     -Dopenexr=disabled ^
     -Dpdfium=disabled ^
     -Dquantizr=disabled ^
-    -Duhdr=disabled ^
+    -Duhdr=enabled ^
     -Dintrospection=disabled
 
 @REM MSVC does not support `__attribute__((weak))`
