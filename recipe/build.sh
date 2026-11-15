@@ -1,17 +1,17 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
 set -ex
 
 # Keep in sync with `meson_config_args` in `bld.bat`.
 meson_config_args=(
     -Dauto_features=enabled
-    -Dcgif=disabled
+    -Dcgif=enabled
     -Dimagequant=disabled
     -Dmatio=disabled
     -Dnifti=disabled
     -Dopenexr=disabled
     -Dpdfium=disabled
-    -Dquantizr=disabled
-    -Duhdr=disabled
+    -Dquantizr=enabled
+    -Duhdr=enabled
     -Dintrospection=disabled
 )
 

@@ -42,6 +42,8 @@ librsvg:
 - '2'
 libtiff:
 - '4.7'
+libultrahdr:
+- 2.0.2
 libvips:
 - '8'
 libwebp:

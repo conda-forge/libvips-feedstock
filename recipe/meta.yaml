@@ -1,5 +1,5 @@
 # Notes
-# - `cgif`, `imagequant`, `matio`, `niftiio`, `openexr`, `libuhdr` are missing
+# - `imagequant`, `matio`, `niftiio`, `openexr` are missing
 
 {% set version = "8.18.7" %}
 
@@ -12,7 +12,7 @@ source:
   sha256: 5baaead3b0bb20ffdb9e9ff09aa9fda08620923df77b63b436654cb5e0b3bf94
 
 build:
-  number: 4
+  number: 5
   run_exports:
     # Seems rather stable between minor versions. Only pin the major version
     # https://abi-laboratory.pro/index.php?view=timeline&l=vips
@@ -46,6 +46,7 @@ requirements:
     # Specify lgpl so that there isn't any concern about the license
     # which this software was built with.
     - libarchive * lgpl_*
+    - libcgif
     - libexif
     - libgirepository
     # need harfbuzz.pc for `pkgconf --cflags pangocairo`
@@ -59,6 +60,7 @@ requirements:
     - libraw
     - librsvg
     - libtiff
+    - libultrahdr
     - libwebp
     # need libxml-2.0.pc for `pkgconf --cflags librsvg-2.0`
     - libxml2-devel
@@ -68,6 +70,7 @@ requirements:
     - poppler
     # needed to find OpenSlide on Linux
     # https://github.com/conda-forge/xorg-libx11-feedstock/issues/51
+    - quantizr
     - xorg-xorgproto                         # [linux]
     - zlib
   run:
