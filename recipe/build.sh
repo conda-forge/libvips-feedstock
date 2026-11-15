@@ -5,12 +5,12 @@ set -ex
 meson_config_args=(
     -Dauto_features=enabled
     -Dcgif=enabled
-    -Dimagequant=enabled
+    -Dimagequant=disabled
     -Dmatio=disabled
     -Dnifti=disabled
     -Dopenexr=disabled
     -Dpdfium=disabled
-    -Dquantizr=disabled
+    -Dquantizr=enabled
     -Duhdr=enabled
     -Dintrospection=disabled
 )
