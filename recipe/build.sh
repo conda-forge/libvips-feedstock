@@ -1,4 +1,4 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
 set -ex
 
 # Keep in sync with `meson_config_args` in `bld.bat`.
