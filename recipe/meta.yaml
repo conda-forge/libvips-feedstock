@@ -1,5 +1,5 @@
 # Notes
-# - `cgif`, `imagequant`, `matio`, `niftiio`, `openexr`, `libuhdr` are missing
+# - `imagequant`, `matio`, `niftiio`, `openexr` are missing
 
 {% set version = "8.18.7" %}
 
