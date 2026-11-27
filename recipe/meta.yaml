@@ -1,7 +1,7 @@
 # Notes
 # - `imagequant`, `matio`, `niftiio`, `openexr` are missing
 
-{% set version = "8.18.7" %}
+{% set version = "8.18.8" %}
 
 package:
   name: libvips
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://github.com/libvips/libvips/releases/download/v{{ version }}/vips-{{ version }}.tar.xz
-  sha256: 5baaead3b0bb20ffdb9e9ff09aa9fda08620923df77b63b436654cb5e0b3bf94
+  sha256: 7871fc98498d90879d866b7de46cb52209dc859de7662dd6f596e7b0ff95014b
 
 build:
-  number: 5
+  number: 0
   run_exports:
     # Seems rather stable between minor versions. Only pin the major version
     # https://abi-laboratory.pro/index.php?view=timeline&l=vips
